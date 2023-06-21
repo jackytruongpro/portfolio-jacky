@@ -1,0 +1,109 @@
+@font-face {
+  font-family: HV-Simplicite;
+  src: url('/static/font/HV-Simplicite/HV-Simplicite.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Lato-Light;
+  src: url('/static/font/Lato/Lato-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Lato-Regular;
+  src: url('/static/font/Lato/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Lato-Bold;
+  src: url('/static/font/Lato/Lato-Bold.ttf') format('truetype');
+}
+
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: HV-Simplicite;
+  text-transform: uppercase;
+}
+
+p, span, div {
+  font-family: Lato-Light;
+}
+
+.hidden {
+  transition: opacity 3000ms, display 3000ms;
+  display: none;
+  opacity: 0;
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.176);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(9px);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.panel .close-button {
+   position: absolute;
+   top: 50px;
+   right: 50px;
+   cursor: pointer;
+   transition: .5s all ease-in-out;
+}
+
+.panel .close-button:hover {
+  transform: rotate(180deg);
+}
+
+.panel .close-button img {
+   width: 300px;
+   height: auto;
+}
+
+.panel .panel-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  width: 75vw;
+  height: 100vh;
+  overflow-y: scroll;
+  margin-left: 5em;
+  color: white;
+}
+
+.panel-top-spacer {
+  min-height: 18em;
+}
+
+.panel .panel-content h1 {
+  font-size: 8rem;
+}
+
+.panel .panel-content h2 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+.panel .panel-content h3 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.panel .panel-content p {
+  font-size: 1.5rem;
+}

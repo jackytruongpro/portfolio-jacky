@@ -4,13 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test CubeMap</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
 </head>
 <body>
-    <h4>Test CubeMap</h4>
-
     <canvas class="webgl"></canvas>
-    <img src="../static/textures/roomCube/nx.png">
+
+    <div id="1" class="panel visible">
+        <div class="close-button">
+            <img src="/static/image/close.svg">
+        </div>
+        <div class="panel-content" >
+            <div class="panel-top-spacer">
+            </div>
+            <h1>Poster 1</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <canvas class="project"></canvas>
+            <h2>Technologies</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <canvas class="techno"></canvas>
+            <h3>Pourquoi ?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <h2>Liens utiles</h2>
+            <canvas class="link"></canvas>
+        </div>
+    </div>
+    <div id="2" class="panel hidden">
+        <h2>Poster 2</h2>
+    </div>
+    <div id="3" class="panel hidden">
+        <h2>Poster 3</h2>
+    </div>
     <script type="module" src="./script.js"></script>
+    <script type="module" src="./projectScene.js"></script>
+    <script type="module" src="./technoScene.js"></script>
+    <script type="module" src="./linkScene.js"></script>
 </body>
 </html>
