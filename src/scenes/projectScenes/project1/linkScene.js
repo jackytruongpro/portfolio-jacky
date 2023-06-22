@@ -8,12 +8,6 @@ const scene = new THREE.Scene();
 
 const canvas = document.querySelector(".link1");
 
-//---------
-// Axe helper
-//---------
-const axesHelper = new THREE.AxesHelper( 5 );
-scene.add( axesHelper );
-
 
 //---------
 // Sizes

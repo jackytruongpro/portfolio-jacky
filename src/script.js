@@ -2,7 +2,6 @@ import * as THREE from "three"
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import GUI from 'lil-gui'; 
 
 //---------
 // Scene
@@ -42,6 +41,40 @@ const camera = new THREE.PerspectiveCamera(70, sizes.width / sizes.height);
 camera.position.z = 10;
 scene.add(camera);
 
+//---------
+// Renderer
+//---------
+const renderer = new THREE.WebGLRenderer({ canvas });
+renderer.setSize(sizes.width, sizes.height);
+
+
+//---------
+// Controls
+//---------
+const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
+controls.maxPolarAngle = (Math.PI / 2) + 0.1 // How far you can orbit vertically
+
+const tick = () => {
+	controls.update();
+	renderer.render(scene, camera);
+	window.requestAnimationFrame(tick);
+}
+tick()
+
+
+//---------
+// Light
+//---------
+const light = new THREE.AmbientLight( 0xffffff, 1.5 );
+scene.add( light );
+light.position.set(0, 300);
+
+// const light2 = new THREE.AmbientLight( 0xffffff, 1.5 );
+// scene.add( light2 );
+// light.position.set(0, 100, 0);
+
+
 canvas.addEventListener('wheel', handleMouseWheel);
 
 // Fonction de gestion de l'événement de la molette de la souris
@@ -61,38 +94,6 @@ function handleMouseWheel(event) {
 	camera.zoom = Math.max(minZoom, Math.min(maxZoom, camera.zoom));
   camera.updateProjectionMatrix();
 }
-
-
-//---------
-// Renderer
-//---------
-const renderer = new THREE.WebGLRenderer({ canvas });
-renderer.setSize(sizes.width, sizes.height);
-
-
-//---------
-// Controls
-//---------
-const controls = new OrbitControls(camera, canvas)
-controls.enableDamping = true
-controls.maxPolarAngle = (Math.PI / 2) + 0.1
-
-const tick = () => {
-	controls.update();
-	renderer.render(scene, camera);
-	window.requestAnimationFrame(tick);
-}
-tick()
-
-
-//---------
-// Light
-//---------
-const light = new THREE.AmbientLight( 0xffffff, 1.5 ); // soft white light
-scene.add( light );
-light.position.set(0, 300);
-
-
 
 
 //---------
@@ -155,37 +156,6 @@ function addGLTF(gltf_path, gltf_link, gltf_position_x, gltf_position_y, gltf_po
 			// console.log(gltf.scene)
 			links.push(gltf.scene);
 			scene.add( gltf.scene );
-
-			gltf.animations; // Array<THREE.AnimationClip>
-			gltf.scene; // THREE.Group
-			gltf.scenes; // Array<THREE.Group>
-			gltf.cameras; // Array<THREE.Camera>
-			gltf.asset; // Object
-
-
-			//---------
-			// GUI
-			//---------
-			// const gui = new GUI()
-			// const gltfFolder = gui.addFolder('3D Model')
-			// gltfFolder.add(gltf.scene.position.x, 'Position x')
-			// gltfFolder.add(gltf.scene.position.y, 'Position y')
-			// gltfFolder.add(gltf.scene.position.z, 'Position z')
-			// gltfFolder.add(gltf.scene.scale.x, 'Scale x')
-			// gltfFolder.add(gltf.scene.scale.y, 'Scale y')
-			// gltfFolder.add(gltf.scene.scale.z, 'Scale z')
-			// gltfFolder.add(gltf.scene.rotation.x, 'Rotation x')
-			// gltfFolder.add(gltf.scene.rotation.y, 'Rotation y')
-			// gltfFolder.add(gltf.scene.rotation.z, 'Rotation z')
-			// gltfFolder.open()
-
-
-			// const animate = () => {
-			// 	gltf.scene.rotation.y += 0.01
-			// 	window.requestAnimationFrame( animate );
-			// }
-			// animate();
-
 		},
 		// called while loading is progressing
 		function ( xhr ) {
@@ -227,7 +197,6 @@ add_linkable_cube('4', 250, -100, -150, 80, 10, 50, 0, -10, 0);
 add_linkable_cube('5', -300, -65, 45, 50, 30, 50, 0, 1, 0);
 add_linkable_cube('6', -140, -380, -500, 200, 220, 115, 0, 5.5, 0);
 add_linkable_cube('7', -245, -380, -280, 80, 50, 100, 0, 3, 0);
-
 
 
 //----------

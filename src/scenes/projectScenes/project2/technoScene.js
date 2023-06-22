@@ -6,12 +6,6 @@ import * as THREE from "three"
 const technoScene = new THREE.Scene(); 
 const canvas = document.querySelector(".techno2");
 
-//---------
-// Axe helper
-//---------
-const axesHelper = new THREE.AxesHelper( 5 );
-technoScene.add( axesHelper );
-
 
 //---------
 // Light

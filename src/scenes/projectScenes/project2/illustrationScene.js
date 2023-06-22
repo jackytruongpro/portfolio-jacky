@@ -9,9 +9,6 @@ const canvas = document.querySelector(".illustration2");
 //---------
 // Axe helper
 //---------
-const axesHelper = new THREE.AxesHelper( 5 );
-illustrationScene.add( axesHelper );
-
 const illustrations = [];
 
 function add_illustration(illustration_position_x, illustration_front, illustration_back) {
@@ -52,9 +49,9 @@ function add_illustration(illustration_position_x, illustration_front, illustrat
   let selectedIllustration = null;
   let rotationSpeed = 0.005;
 
-  document.addEventListener('mousedown', onMouseDown, false);
-  document.addEventListener('mouseup', onMouseUp, false);
-  document.addEventListener('mousemove', onMouseMove, false);
+  document.addEventListener('mousedown', onMouseDown);
+  document.addEventListener('mouseup', onMouseUp);
+  document.addEventListener('mousemove', onMouseMove);
 
   let previousMousePosition = {
     x: 0,
