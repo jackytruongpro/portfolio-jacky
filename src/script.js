@@ -206,6 +206,31 @@ addGLTF('/static/model/Drawer/scene.gltf', 'https://www.google.fr', -140, -380, 
 addGLTF('/static/model/Sneaker/scene.gltf', 'https://www.google.fr', -280, -380, -280, 200, 200, 200, 0, 3, 0);
 addGLTF('/static/model/Sneaker/scene.gltf', 'https://www.google.fr', -220, -380, -280, 200, 200, 200, 0, 3, 2);
 
+const linkable_cubes = [];
+
+function add_linkable_cube(id_panel, cube_position_x, cube_position_y, cube_position_z, cube_scale_x, cube_scale_y, cube_scale_z, cube_rotation_x, cube_rotation_y, cube_rotation_z) {
+	const geometry = new THREE.BoxGeometry(cube_scale_x, cube_scale_y, cube_scale_z);
+  const material = new THREE.MeshStandardMaterial({
+		color: 0xff0000, // Couleur du matériau (rouge)
+		transparent: true, // Activation de la transparence
+		opacity: 0.5 // Niveau de transparence (0.0 = totalement transparent, 1.0 = opaque)
+	});
+  const linkable_cube = new THREE.Mesh(geometry, material);
+	linkable_cube.userData.id = id_panel;
+	linkable_cube.position.set(cube_position_x, cube_position_y, cube_position_z);
+	linkable_cube.rotation.set(cube_rotation_x, cube_rotation_y, cube_rotation_z);
+
+	linkable_cubes.push(linkable_cube);
+	scene.add(linkable_cube);
+}
+
+add_linkable_cube('4', 250, -100, -150, 80, 10, 50, 0, -10, 0);
+add_linkable_cube('5', -300, -65, 45, 50, 30, 50, 0, 1, 0);
+add_linkable_cube('6', -140, -380, -500, 200, 220, 115, 0, 5.5, 0);
+add_linkable_cube('7', -245, -380, -280, 80, 50, 100, 0, 3, 0);
+
+
+
 //----------
 // Raycaster
 //----------
@@ -225,6 +250,7 @@ function onClick(event) {
     raycaster.setFromCamera(mouse, camera);
 
     const intersects = raycaster.intersectObjects(posters, true);
+    const intersectsLinkableCubes = raycaster.intersectObjects(linkable_cubes, true);
 
     if (intersects.length > 0) {
         // Au click
@@ -236,6 +262,17 @@ function onClick(event) {
 
         console.log(`Forme géométrique touchée : ${object.userData.id}`);
     }
+
+		if (intersectsLinkableCubes.length > 0) {
+			// Au click
+			const object = intersectsLinkableCubes[0].object;
+		
+			const objectId = document.getElementById(object.userData.id);
+
+			toggleHidden(objectId)
+
+			console.log(`Forme géométrique touchée : ${object.userData.id}`);
+	}
 }
 
 function toggleHidden(element){
