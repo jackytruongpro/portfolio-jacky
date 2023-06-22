@@ -1,0 +1,11 @@
+Model Information:
+* title:	File_Folder_drawer
+* source:	https://sketchfab.com/3d-models/file-folder-drawer-91ef22553dc64200862059a588709336
+* author:	xbassad (https://sketchfab.com/xbassad)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "File_Folder_drawer" (https://sketchfab.com/3d-models/file-folder-drawer-91ef22553dc64200862059a588709336) by xbassad (https://sketchfab.com/xbassad) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

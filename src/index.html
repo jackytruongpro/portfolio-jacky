@@ -9,9 +9,8 @@
 </head>
 <body>
     <canvas class="webgl"></canvas>
-
-    <div id="1" class="panel visible">
-        <div class="close-button">
+    <div id="1" class="panel hidden">
+        <div class="close-button" onclick="removeVisible()">
             <img src="/static/image/close.svg">
         </div>
         <div class="panel-content" >
@@ -28,7 +27,7 @@
                 metus. Nunc faucibus dolor vitae velit lobortis elementum.
                 Donec bibendum pretium pretium.
             </p>
-            <canvas class="project"></canvas>
+            <canvas class="illustration1"></canvas>
             <h2>Technologies</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Aenean ultricies auctor ultrices. Mauris orci turpis,
@@ -40,7 +39,7 @@
                 metus. Nunc faucibus dolor vitae velit lobortis elementum.
                 Donec bibendum pretium pretium.
             </p>
-            <canvas class="techno"></canvas>
+            <canvas class="techno1"></canvas>
             <h3>Pourquoi ?</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Aenean ultricies auctor ultrices. Mauris orci turpis,
@@ -53,18 +52,116 @@
                 Donec bibendum pretium pretium.
             </p>
             <h2>Liens utiles</h2>
-            <canvas class="link"></canvas>
+            <canvas class="link1"></canvas>
         </div>
     </div>
-    <div id="2" class="panel hidden">
-        <h2>Poster 2</h2>
+    <div id="2" class="panel hidden" onclick="removeVisible()">
+        <div class="close-button">
+            <img src="/static/image/close.svg">
+        </div>
+        <div class="panel-content" >
+            <div class="panel-top-spacer">
+            </div>
+            <h1>Poster 2</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <canvas class="illustration2"></canvas>
+            <h2>Technologies</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <canvas class="techno2"></canvas>
+            <h3>Pourquoi ?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <h2>Liens utiles</h2>
+            <canvas class="link2"></canvas>
+        </div>
     </div>
-    <div id="3" class="panel hidden">
-        <h2>Poster 3</h2>
+    <div id="3" class="panel hidden" onclick="removeVisible()">
+        <div class="close-button">
+            <img src="/static/image/close.svg">
+        </div>
+        <div class="panel-content" >
+            <div class="panel-top-spacer">
+            </div>
+            <h1>Poster 3</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <canvas class="illustration3"></canvas>
+            <h2>Technologies</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <canvas class="techno3"></canvas>
+            <h3>Pourquoi ?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenean ultricies auctor ultrices. Mauris orci turpis,
+                venenatis eu magna quis, aliquam tincidunt eros. Nullam scelerisque,
+                magna quis blandit pharetra, orci erat rhoncus dolor,
+                sed fringilla turpis urna sit amet odio. Morbi placerat ante,
+                ac fermentum ipsum scelerisque. Vestibulum a augue eget felis
+                malesuada porta in vel nunc. In sit amet leo dolor.Nunc a commodo
+                metus. Nunc faucibus dolor vitae velit lobortis elementum.
+                Donec bibendum pretium pretium.
+            </p>
+            <h2>Liens utiles</h2>
+            <canvas class="link3"></canvas>
+        </div>
     </div>
+    <script>
+        function removeVisible(){
+            const visible = document.querySelector('.visible');
+            visible.classList.replace('visible', 'hidden');
+        }
+    </script>
     <script type="module" src="./script.js"></script>
-    <script type="module" src="./projectScene.js"></script>
-    <script type="module" src="./technoScene.js"></script>
-    <script type="module" src="./linkScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project1/illustrationScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project1/technoScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project1/linkScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project2/illustrationScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project2/technoScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project2/linkScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project3/illustrationScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project3/technoScene.js"></script>
+    <script type="module" src="./scenes/projectScenes/project3/linkScene.js"></script>
 </body>
 </html>
