@@ -31,8 +31,8 @@ const sizes = {
 //---------
 // Axe helper
 //---------
-const axesHelper = new THREE.AxesHelper( 5 );
-scene.add( axesHelper );
+// const axesHelper = new THREE.AxesHelper( 5 );
+// scene.add( axesHelper );
 
 
 //---------
@@ -102,11 +102,11 @@ light.position.set(0, 300);
 // Poster
 const posters = [];
 
-function add_poster(poster_id, poster_name, poster_width, poster_height, poster_position_x, poster_position_y, poster_position_z, poster_rotation_y) {
+function add_poster(poster_id, poster_name, poster_width, poster_height, poster_position_x, poster_position_y, poster_position_z, poster_rotation_y, poster_image_path) {
 	const geometry = new THREE.PlaneGeometry( poster_width, poster_height );
 
 	const textureLoader = new THREE.TextureLoader();
-	const texture = textureLoader.load('/static/image/techno/logo-flutter.png');
+	const texture = textureLoader.load(poster_image_path);
 
 	const material = new THREE.MeshBasicMaterial( { map: texture } );
 	const poster = new THREE.Mesh( geometry, material );
@@ -121,10 +121,9 @@ function add_poster(poster_id, poster_name, poster_width, poster_height, poster_
 	scene.add(poster);
 }
 
-add_poster(1,'Poster 1', 350, 457, -600, -150, -1600, 7);
-add_poster(2,'Poster 2', 350, 380, -200, -130, -1600, 7);
-add_poster(3,'Poster 3', 350, 317, 135, -112, -1600, 7);
-
+add_poster(1,'Poster 1', 350, 457, -600, -150, -1600, 7, '/static/image/photo/poster_aqualink.png');
+add_poster(2,'Poster 2', 350, 380, -200, -130, -1600, 7, '/static/image/photo/poster_letsgo.png');
+add_poster(3,'Poster 3', 350, 317, 135, -112, -1600, 7, '/static/image/photo/poster_cocoloc.png');
 
 
 //---------
@@ -213,7 +212,7 @@ function add_linkable_cube(id_panel, cube_position_x, cube_position_y, cube_posi
   const material = new THREE.MeshStandardMaterial({
 		color: 0xff0000, // Couleur du matériau (rouge)
 		transparent: true, // Activation de la transparence
-		opacity: 0.5 // Niveau de transparence (0.0 = totalement transparent, 1.0 = opaque)
+		opacity: 0.0 // Niveau de transparence (0.0 = totalement transparent, 1.0 = opaque)
 	});
   const linkable_cube = new THREE.Mesh(geometry, material);
 	linkable_cube.userData.id = id_panel;

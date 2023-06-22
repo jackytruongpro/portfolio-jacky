@@ -4,13 +4,7 @@ import * as THREE from "three"
 // Scene
 //---------
 const technoScene = new THREE.Scene(); 
-const canvas = document.querySelector(".techno2");
-
-//---------
-// Axe helper
-//---------
-const axesHelper = new THREE.AxesHelper( 5 );
-technoScene.add( axesHelper );
+const canvas = document.querySelector(".technoPresentation");
 
 
 //---------
@@ -20,6 +14,7 @@ const spotLight = new THREE.SpotLight( 0xffffff );
 spotLight.position.set( 0, -300, 500 );
 // spotLight.castShadow = true;
 technoScene.add( spotLight );
+
 
 //---------
 // Sizes
@@ -65,7 +60,7 @@ animate()
 //---------
 const technos = [];
 
-function add_techno(techno_position_x, techno_name, techno_link, techno_image) {
+function add_techno(techno_position_x, techno_position_y, techno_name, techno_link, techno_image) {
   const textureLoader = new THREE.TextureLoader();
   const textureTechno = textureLoader.load(techno_image);
   
@@ -77,7 +72,7 @@ function add_techno(techno_position_x, techno_name, techno_link, techno_image) {
     })
   )
   techno.position.x = techno_position_x;
-  techno.position.y = 0;
+  techno.position.y = techno_position_y;
   techno.position.z = 0;
   techno.name = techno_name;
   techno.userData.link = techno_link;
@@ -142,11 +137,21 @@ function add_techno(techno_position_x, techno_name, techno_link, techno_image) {
 
 }
 
-add_techno(-6,'Flutter', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-flutter.png');
-add_techno(-3,'Dart', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-dart.png');
-add_techno(0,'Node', 'https://tickets-siae.com/en/', '/static/image/techno/logo-node.png');
-add_techno(3,'Firebase', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-firebase.png');
-add_techno(6,'Flutterflow', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-flutterflow.png');
+add_techno(-6, 2.5, 'Flutter', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-vanilla.png');
+add_techno(-3, 2.5, 'Dart', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-ts.png');
+add_techno(0, 2.5, 'Node', 'https://tickets-siae.com/en/', '/static/image/techno/logo-vue.png');
+add_techno(3, 2.5, 'Firebase', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-react.png');
+add_techno(6, 2.5, 'Flutterflow', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-angular.png');
+add_techno(-6, 0, 'Flutter', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-node.png');
+add_techno(-3, 0, 'Dart', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-php.png');
+add_techno(0, 0, 'Node', 'https://tickets-siae.com/en/', '/static/image/techno/logo-wordpress.png');
+add_techno(3, 0, 'Firebase', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-tailwind.png');
+add_techno(6, 0, 'Flutterflow', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-ant.png');
+add_techno(-6, -2.5, 'Flutter', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-sass.png');
+add_techno(-3, -2.5, 'Dart', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-flutter.png');
+add_techno(0, -2.5, 'Node', 'https://tickets-siae.com/en/', '/static/image/techno/logo-dart.png');
+add_techno(3, -2.5, 'Firebase', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-firebase.png');
+add_techno(6, -2.5, 'Flutterflow', 'https://tickets-siae.com/fr/', '/static/image/techno/logo-flutterflow.png');
 
 //----------
 // On techno click

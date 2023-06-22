@@ -17,7 +17,7 @@ technoScene.add( axesHelper );
 // Light
 //---------
 const spotLight = new THREE.SpotLight( 0xffffff );
-spotLight.position.set( 0, 0, 500 );
+spotLight.position.set( 0, -300, 500 );
 // spotLight.castShadow = true;
 technoScene.add( spotLight );
 

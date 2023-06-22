@@ -24,9 +24,23 @@ body {
   overflow: hidden;
 }
 
+div * {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: none !important;
+    background-color: transparent;
+  }  ::-webkit-scrollbar {
+    width: 3px !important;
+    background-color: transparent;
+  }  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
+
 h1, h2, h3, h4 {
   font-family: HV-Simplicite;
   text-transform: uppercase;
+  word-spacing: 1rem;
 }
 
 p, span, div {
@@ -79,11 +93,13 @@ p, span, div {
   flex-direction: column;
   align-items: flex-start;
   justify-content: start;
-  width: 75vw;
+  width: 70vw;
   height: 100vh;
   overflow-y: scroll;
   margin-left: 5em;
+  padding-right: 5em;
   color: white;
+  word-spacing: 0.5rem;
 }
 
 .panel-top-spacer {
@@ -106,4 +122,16 @@ p, span, div {
 
 .panel .panel-content p {
   font-size: 1.5rem;
+}
+
+.photoPresentation {
+  position: absolute;
+  top: 3em;
+  right: 5em;
+}
+
+.sneakerInterest {
+  position: absolute;
+  bottom: 0;
+  right: 2em;
 }
